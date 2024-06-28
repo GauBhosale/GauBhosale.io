@@ -1,15 +1,61 @@
-# [Project 1: Movie Recommendation System Model](https://github.com/RonitMalik/Movie-Recommendation-System-)
+# [Project 1: RetailQueryGPT: Intelligent Inventory Management System](https://github.com/GauBhosale/Inventory-Manager-LLM-Project.git)
 
-This is a project I did for my masters research paper, where I build a recommendation system for a movies dataset.
+Project Overview
+	•	Objective: Create an end-to-end LLM project using Langchain and Google Palm for a retail store selling t-shirts.
+	•	Functionality: Develop a tool similar to ChatGPT that converts natural language questions into SQL queries to interact with a MySQL database.
+Key Components
+	•	Store Data:
+	•	Four main brands: V Hussein, Levi's, Nike, Adidas.
+	•	Database has two tables:
+	•	t-shirts: Contains inventory count, price per unit.
+	•	discounts: Contains discount information per t-shirt.
+	•	Personas:
+	•	Tony Sharma: Store manager, needs quick answers from the database.
+	•	Lok: Data analyst, writes SQL queries but is often busy.
+	•	Peter P: Data scientist, tasked with building the LLM tool.
+Technical Architecture
+	0.	Question to SQL Query:
+	•	Use Google Palm via Langchain to convert questions into SQL queries.
+	•	Handle simple to moderately complex queries.
+	•	Implement few-shot learning for more complex queries.
+	0.	Few-shot Learning:
+	•	Prepare a training dataset of sample questions and corresponding SQL queries.
+	•	Use embeddings (word/sentence) and store them in a vector database (ChromaDB).
+	0.	Vector Database:
+	•	Options: Pinecone, Milvus, ChromaDB.
+	•	Selected: ChromaDB (open-source and suitable for this project).
+	0.	UI Development:
+	•	Build using Streamlit.
+	•	Minimal coding required (around 5-6 lines).
+Key Steps
+	0.	Set Up API Key:
+	•	Obtain API key from Google Maker Suite.
+	•	Test prompts using Maker Suite's test pad.
+	0.	Database Setup:
+	•	Use MySQL Workbench to create and manage the database.
+	•	Execute provided SQL scripts to set up tables and insert sample data.
+	0.	Jupyter Notebook:
+	•	Import required libraries and initialize the LLM with the API key.
+	•	Test sample prompts and ensure correct functioning.
+	0.	SQL Database Chain:
+	•	Create an SQL database object in Langchain.
+	•	Test queries to ensure accurate SQL generation.
+Challenges and Observations
+	•	Complex Queries:
+	•	Initial LLM might make errors (e.g., assuming column names).
+	•	Few-shot learning needed for handling ambiguities.
+	•	Need to explicitly clarify column meanings in the training data.
+	•	Examples:
+	•	Correct query generation for specific questions (e.g., inventory count, pricing).
+	•	Handling of joins and discounts accurately.
+Conclusion
+	•	LLMs can significantly streamline database querying processes but require careful setup and training, especially for complex queries.
+	•	The integration of vector databases and few-shot learning enhances the tool's capability to handle real-life database scenarios.
+This project provides a practical example of using modern LLM frameworks to solve industry-specific problems, demonstrating the potential and challenges of such integrations.
 
-* Data was taken from the movielens dataset 
-* The model uses both; content-based filtering techniques and collaborative filtering techniques. 
-* Algorithms Used : K-Nearest Neightbours, TF-IDFS, Singular Value Decomposition Model (SVD), Alternatining least Square (ALS) 
-* Optimised the SVD & ALS model. 
-* The Project Write-up is published on [SSRN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3791837)
 
 ## Overview Of The Singular Value Decomposition Architecture  
-![](Images/Picture%201.png) 
+![](RetailQueryGPT.pdf) 
 ## Popular Movie Genres  
 ![](Images/Picture%202.png)
 
