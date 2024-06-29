@@ -168,6 +168,9 @@
 ## Next Steps
 - Use the created endpoint to predict cardiac arrest chances for new users in a new Jupyter notebook.
 
+### Final Look 
+![](Loan Eligibility.pdf)
+
 ---
 
 # [Typing Tutor Project Notes](https://github.com/GauBhosale/Typing-Tutor.git)
@@ -240,3 +243,106 @@
 ## Conclusion
 - Streamlit provides an easy-to-use framework for creating interactive web applications.
 - This project highlights the integration of Streamlit with machine learning models for practical use cases.
+
+### Final Look 
+![]()
+
+# [Image Classification Notes](https://github.com/GauBhosale/Image-Classification)
+
+## Problem Statement
+- **Objective**: Build an image classification model using deep learning to classify images into respective classes.
+- **Implementation Steps**:
+  1. Define the deep learning model.
+  2. Preprocess the data for the model.
+  3. Get predictions from the model.
+
+## Tools and Libraries
+- **Libraries**:
+  - Numpy
+  - PIL (Python Imaging Library)
+  - Matplotlib
+  - JSON
+  - PyTorch
+  - Streamlit
+  - Pyngrok
+
+## Model and Data
+- **Model**: DenseNet121 (pre-trained on ImageNet dataset).
+- **Data**: Images for classification (example used: dog.jpg).
+
+## Steps to Build and Deploy the Model
+1. **Data Preprocessing**:
+   - Load and preprocess the image using PIL.
+   - Create a mini-batch and pass it into the model.
+   - Apply Softmax to get class probabilities.
+   - Use a dictionary to map the probabilities to class names.
+   
+2. **Training and Inference**:
+   - Load the pre-trained DenseNet121 model.
+   - Preprocess input images.
+   - Pass the images through the model to get class predictions and confidence scores.
+   
+3. **Frontend with Streamlit**:
+   - **Setup**:
+     - Install required libraries (Streamlit, Pyngrok).
+     - Create `app.py` file.
+   - **Functionality**:
+     - Define a prediction function for inference.
+     - Set up a file uploader and button for predictions.
+     - Display the image and results on the frontend.
+     
+4. **Deployment on Google Colab**:
+   - Use Streamlit and Pyngrok for deployment.
+   - Generate a public URL to access the deployed model.
+   
+5. **Deployment on AWS**:
+   - Log in to AWS instance.
+   - Create a deployment folder and copy necessary files.
+   - Run the Streamlit app on AWS.
+   - Verify the deployment by uploading an image and getting predictions.
+
+## Summary
+- Successfully built and deployed an image classification model using DenseNet121.
+- Used Google Colab for initial testing and AWS for final deployment.
+- Implemented a Streamlit-based frontend for user interaction.
+
+### Final Look 
+![]()
+
+---
+
+# [Transcript Generation Notes](https://github.com/GauBhosale/Transcript-Generator)
+
+## Problem Statement
+- **Objective**: Deploy a transcript generation model using PLaS (Platform as a Service).
+- **Process**:
+  1. User uploads a video file.
+  2. Generate subtitles based on the audio in the video.
+
+## Tools and Libraries
+- **Deep Learning Model**: PyTorch's Silero speech-to-text model.
+- **Frontend**: Website with upload button and download link for subtitles.
+
+## Steps to Build and Deploy the Model
+1. **Frontend Development**:
+   - Create a website with an upload button for video files.
+   - Provide a downloadable link for the generated subtitles.
+   
+2. **Backend Development**:
+   - Extract audio from the uploaded video.
+   - Send the audio in batches to the deep learning model.
+   - Use the Silero speech-to-text model for generating text from audio.
+   
+3. **Workflow**:
+   - User uploads a video file.
+   - Audio is extracted and processed.
+   - Model generates text (subtitles) from the audio.
+   - Subtitles are made available for download in SRT format.
+
+## Summary
+- Implemented a transcript generation model using deep learning.
+- Provided a user-friendly frontend for video upload and subtitle download.
+- Used PyTorch's Silero model for accurate speech-to-text conversion.
+
+### Final Look 
+![](Transcript generation.pdf)
