@@ -117,135 +117,10 @@
 - Deploying a machine learning model using Streamlit.
 - Hosting models on personal websites.
 
----
-
-# [Cardiac Arrest Predictor Notes](https://github.com/GauBhosale/Cardiac-Arrest-Predictor.git)
-
-## Problem Statement
-- **Objective**: Build a solution to predict the chances of cardiac arrest based on physical and demographic features using machine learning.
-
-## Data
-- **Features**: Gender, height, weight, smoking status, alcohol consumption.
-- **Target Variable**: cardio (indicating the occurrence of cardiac arrest).
-
-## Tools & Setup
-1. **Amazon SageMaker**: For building and deploying models.
-2. **Amazon S3**: For storing datasets and trained models.
-3. **Libraries**: Numpy, Pandas, Boto3 (AWS SDK), SageMaker, Sklearn.
-
-## Steps Involved
-1. **Creating Notebook Instance**
-   - Select region and create instance with `ml.t2.medium` type.
-   - Assign IAM role for permissions.
-2. **Setting up S3 Bucket**
-   - Create S3 bucket in the same region as the notebook instance.
-3. **Building Model**
-   - **Data Loading & Preprocessing**:
-     - Load dataset using Pandas.
-     - Convert categorical variables to numeric.
-     - Split data into training (70%) and testing (30%) sets.
-   - **Upload to S3**:
-     - Preprocessed data is uploaded to the S3 bucket.
-   - **Model Definition**:
-     - Use XGBoost algorithm.
-     - Define hyperparameters and IAM role.
-   - **Training**:
-     - Train the model using `ml.m4.xlarge` instance.
-     - Store trained model in S3 bucket.
-4. **Deploying Model**
-   - **Serializer**: Use CSV serializer.
-   - **Endpoint Creation**:
-     - Deploy model and create an endpoint using `ml.m4.xlarge` instance.
-5. **Inference**
-   - Convert test set to an array.
-   - Generate predictions using the deployed model endpoint.
-
-## Summary
-- Preprocess data, train and deploy the model on SageMaker.
-- Use endpoint for predictions on new data.
-- Steps ensure efficient use of SageMaker and S3 for machine learning workflows.
-
-## Next Steps
-- Use the created endpoint to predict cardiac arrest chances for new users in a new Jupyter notebook.
-
 ### Final Look 
 ![](Loan Eligibility.pdf)
 
 ---
-
-# [Typing Tutor Project Notes](https://github.com/GauBhosale/Typing-Tutor.git)
-
-## Overview
-- The project is a typing tutor for coders.
-- Users type out code displayed on the left side into a coding window on the right.
-- Users are shown their typing speed and typing accuracy.
-
-## Key Components
-1. **Frontend Creation**:
-   - Uses Streamlit for the interface.
-   - **Classes Involved**:
-     - `TypingTutor`: Manages the frontend and backend.
-     - `SessionState`: Manages user sessions.
-
-2. **Class: TypingTutor**
-   - **Methods**:
-     - `__init__()`: Initializes the website, creates a user session, and loads the deep learning model.
-     - `codeGen()`: Generates text using a deep learning model.
-     - `getPerf()`: Calculates typing speed and accuracy.
-     - `onStartClick()`: Handles the start button click, generates code, and updates session state.
-     - `onEvalClick()`: Handles the eval button click, calculates performance, and updates session state.
-
-3. **Class: SessionState**
-   - **Variables**:
-     - `start_time`: Time when the user starts typing.
-     - `end_time`: Time when the user finishes typing.
-     - `numchars`: Number of characters in the code.
-     - `text`: The code to be typed.
-     - `content`: Code typed by the user.
-
-## Workflow
-1. **Initialization**:
-   - Create an instance of TypingTutor.
-   - Calls `__init__()` method:
-     - Creates a unique session.
-     - Sets up the frontend.
-     - Initializes the deep learning model.
-2. **User Interaction**:
-   - **Start Button Click**:
-     - Calls `onStartClick()`:
-       - Generates code using `codeGen()`.
-       - Updates session state.
-       - Displays the generated code on the frontend.
-   - **Check Speed Button Click**:
-     - Calls `onEvalClick()`:
-       - Calculates performance using `getPerf()`.
-       - Updates session state.
-       - Displays typing speed and accuracy.
-
-## Simplified Frontend Setup
-- For learning purposes, replace the deep learning model with a static file `examplecode.py`.
-- Focuses on understanding the frontend without backend complexities.
-
-## Implementation Steps
-1. **Library Installation**:
-   - Install required libraries: `pyngrok`, `streamlit`, `streamlit_ace`.
-2. **Project Setup**:
-   - Write `examplecode.py`.
-   - Create the typing tutor app script.
-3. **Running the App**:
-   - Use `streamlit run` to start the app.
-   - Access the app locally or via ngrok for public access.
-
-## Example Usage
-- **Scenario**: User starts typing, the tutor calculates speed and accuracy.
-- **Outcome**: Displayed results on the interface.
-
-## Conclusion
-- Streamlit provides an easy-to-use framework for creating interactive web applications.
-- This project highlights the integration of Streamlit with machine learning models for practical use cases.
-
-### Final Look 
-![]()
 
 # [Image Classification Notes](https://github.com/GauBhosale/Image-Classification)
 
@@ -346,3 +221,135 @@
 
 ### Final Look 
 ![](Transcript generation.pdf)
+
+---
+
+# [Cardiac Arrest Predictor Notes](https://github.com/GauBhosale/Cardiac-Arrest-Predictor.git)
+
+## Problem Statement
+- **Objective**: Build a solution to predict the chances of cardiac arrest based on physical and demographic features using machine learning.
+
+## Data
+- **Features**: Gender, height, weight, smoking status, alcohol consumption.
+- **Target Variable**: cardio (indicating the occurrence of cardiac arrest).
+
+## Tools & Setup
+1. **Amazon SageMaker**: For building and deploying models.
+2. **Amazon S3**: For storing datasets and trained models.
+3. **Libraries**: Numpy, Pandas, Boto3 (AWS SDK), SageMaker, Sklearn.
+
+## Steps Involved
+1. **Creating Notebook Instance**
+   - Select region and create instance with `ml.t2.medium` type.
+   - Assign IAM role for permissions.
+2. **Setting up S3 Bucket**
+   - Create S3 bucket in the same region as the notebook instance.
+3. **Building Model**
+   - **Data Loading & Preprocessing**:
+     - Load dataset using Pandas.
+     - Convert categorical variables to numeric.
+     - Split data into training (70%) and testing (30%) sets.
+   - **Upload to S3**:
+     - Preprocessed data is uploaded to the S3 bucket.
+   - **Model Definition**:
+     - Use XGBoost algorithm.
+     - Define hyperparameters and IAM role.
+   - **Training**:
+     - Train the model using `ml.m4.xlarge` instance.
+     - Store trained model in S3 bucket.
+4. **Deploying Model**
+   - **Serializer**: Use CSV serializer.
+   - **Endpoint Creation**:
+     - Deploy model and create an endpoint using `ml.m4.xlarge` instance.
+5. **Inference**
+   - Convert test set to an array.
+   - Generate predictions using the deployed model endpoint.
+
+## Summary
+- Preprocess data, train and deploy the model on SageMaker.
+- Use endpoint for predictions on new data.
+- Steps ensure efficient use of SageMaker and S3 for machine learning workflows.
+
+## Next Steps
+- Use the created endpoint to predict cardiac arrest chances for new users in a new Jupyter notebook.
+
+### Final Look 
+![]()
+
+---
+
+# [Typing Tutor Project Notes](https://github.com/GauBhosale/Typing-Tutor.git)
+
+## Overview
+- The project is a typing tutor for coders.
+- Users type out code displayed on the left side into a coding window on the right.
+- Users are shown their typing speed and typing accuracy.
+
+## Key Components
+1. **Frontend Creation**:
+   - Uses Streamlit for the interface.
+   - **Classes Involved**:
+     - `TypingTutor`: Manages the frontend and backend.
+     - `SessionState`: Manages user sessions.
+
+2. **Class: TypingTutor**
+   - **Methods**:
+     - `__init__()`: Initializes the website, creates a user session, and loads the deep learning model.
+     - `codeGen()`: Generates text using a deep learning model.
+     - `getPerf()`: Calculates typing speed and accuracy.
+     - `onStartClick()`: Handles the start button click, generates code, and updates session state.
+     - `onEvalClick()`: Handles the eval button click, calculates performance, and updates session state.
+
+3. **Class: SessionState**
+   - **Variables**:
+     - `start_time`: Time when the user starts typing.
+     - `end_time`: Time when the user finishes typing.
+     - `numchars`: Number of characters in the code.
+     - `text`: The code to be typed.
+     - `content`: Code typed by the user.
+
+## Workflow
+1. **Initialization**:
+   - Create an instance of TypingTutor.
+   - Calls `__init__()` method:
+     - Creates a unique session.
+     - Sets up the frontend.
+     - Initializes the deep learning model.
+2. **User Interaction**:
+   - **Start Button Click**:
+     - Calls `onStartClick()`:
+       - Generates code using `codeGen()`.
+       - Updates session state.
+       - Displays the generated code on the frontend.
+   - **Check Speed Button Click**:
+     - Calls `onEvalClick()`:
+       - Calculates performance using `getPerf()`.
+       - Updates session state.
+       - Displays typing speed and accuracy.
+
+## Simplified Frontend Setup
+- For learning purposes, replace the deep learning model with a static file `examplecode.py`.
+- Focuses on understanding the frontend without backend complexities.
+
+## Implementation Steps
+1. **Library Installation**:
+   - Install required libraries: `pyngrok`, `streamlit`, `streamlit_ace`.
+2. **Project Setup**:
+   - Write `examplecode.py`.
+   - Create the typing tutor app script.
+3. **Running the App**:
+   - Use `streamlit run` to start the app.
+   - Access the app locally or via ngrok for public access.
+
+## Example Usage
+- **Scenario**: User starts typing, the tutor calculates speed and accuracy.
+- **Outcome**: Displayed results on the interface.
+
+## Conclusion
+- Streamlit provides an easy-to-use framework for creating interactive web applications.
+- This project highlights the integration of Streamlit with machine learning models for practical use cases.
+
+### Final Look 
+![]()
+
+---
