@@ -1,4 +1,4 @@
-# [Inventory Manager LLM Project](https://github.com/GauBhosale/Inventory-Manager-LLM-Project.git)
+# [Retail Query GPT: Inventory Manager LLM Project](https://github.com/GauBhosale/Inventory-Manager-LLM-Project.git)
 
 ## Project Overview
 - **Objective**: Create an end-to-end LLM project using Langchain and Google Palm for a retail store selling t-shirts.
