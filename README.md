@@ -115,7 +115,7 @@
 
 ### Final Look 
 ![](Loan Eligibility.pdf)
-
+<a href="Loan Eligibility.pdf" class="image fit"><img src="images/marr_pic.jpg" alt=""></a>
 ---
 
 # [Image Classification Notes](https://github.com/GauBhosale/Image-Classification)
