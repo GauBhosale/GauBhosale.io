@@ -178,7 +178,7 @@
 - Implemented a Streamlit-based frontend for user interaction.
 
 ### Final Look 
-![]()
+![](Image Classification.pdf)
 
 ---
 
@@ -270,7 +270,7 @@
 - Use the created endpoint to predict cardiac arrest chances for new users in a new Jupyter notebook.
 
 ### Final Look 
-![]()
+![](Cardiac Arrest Predictor.pdf)
 
 ---
 
@@ -346,6 +346,6 @@
 - This project highlights the integration of Streamlit with machine learning models for practical use cases.
 
 ### Final Look 
-![]()
+![](Typing Tutor.pdf)
 
 ---
