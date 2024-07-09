@@ -10,10 +10,6 @@
   - Database has two tables:
     - `t-shirts`: Contains inventory count, price per unit.
     - `discounts`: Contains discount information per t-shirt.
-- **Personas**:
-  - Tony Sharma: Store manager, needs quick answers from the database.
-  - Lok: Data analyst, writes SQL queries but is often busy.
-  - Peter P: Data scientist, tasked with building the LLM tool.
 
 ## Technical Architecture
 1. **Question to SQL Query**:
